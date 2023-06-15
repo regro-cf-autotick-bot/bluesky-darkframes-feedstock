@@ -1,5 +1,5 @@
 {% set name = "bluesky-darkframes" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3207e164d15d23b0fe4712dc2d275d1f5a5802c12f46c7126ab7a2884d5f321b
+  sha256: f9187641b86a495a876f10f0201186b30e68d06892df510dc742ccd9231ae539
 
 build:
   number: 0
