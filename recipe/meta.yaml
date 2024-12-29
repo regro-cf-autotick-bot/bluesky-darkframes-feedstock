@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f9187641b86a495a876f10f0201186b30e68d06892df510dc742ccd9231ae539
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - bluesky
     - event-model >=1.14.0
     - frozendict
@@ -27,6 +27,8 @@ requirements:
     - ophyd
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - bluesky_darkframes
 
